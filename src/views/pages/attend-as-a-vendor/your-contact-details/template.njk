@@ -14,7 +14,7 @@
     id: 'name',
     name: 'owner[name]',
     label: 'Name',
-    value: data.owner.name,
+    value: body.owner.name if errors else data.owner.name,
     errors: errors
   }) -}}
 
@@ -23,7 +23,7 @@
     type: 'tel',
     name: 'owner[phone]',
     label: 'Phone',
-    value: data.owner.phone,
+    value: body.owner.phone if errors else data.owner.phone,
     errors: errors
   }) -}}
 
@@ -32,7 +32,7 @@
     type: 'email',
     name: 'owner[email]',
     label: 'Email',
-    value: data.owner.email,
+    value: body.owner.email if errors else data.owner.email,
     errors: errors
   }) -}}
 
@@ -40,7 +40,7 @@
     id: 'address',
     label: 'Address',
     name: 'owner[address]',
-    value: data.owner.address,
+    value: body.owner.address if errors else data.owner.address,
     errors: errors
   }) -}}
 

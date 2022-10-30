@@ -14,7 +14,7 @@
     name: 'business[exhibitor-name]',
     label: 'Exhibitor name',
     session: session,
-    value: data.business['exhibitor-name'],
+    value:  body.business['exhibitor-name'] if errors else data.business['exhibitor-name'],
     errors: errors
   }) -}}
 
@@ -22,7 +22,7 @@
     id: 'type-of-products',
     name: 'business[type-of-products]',
     label: 'What type of products do you sell?',
-    value: data.business['type-of-products'],
+    value: body.business['type-of-products'] if errors else data.business['type-of-products'],
     errors: errors
   }) -}}
 
