@@ -1,0 +1,23 @@
+header,
+footer,
+main {
+  margin: auto;
+  width: 100%;
+  max-width: 960px;
+}
+
+.form-control {
+  margin-bottom: 2rem;
+}
+.form-control label {
+  display: inline
+}
+.form-control input {
+  display: block;
+}
+.form-control textarea {
+  display: block;
+}
+.form-control input[type="checkbox"] {
+  display: inline;
+}

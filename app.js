@@ -4,10 +4,16 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 
+// Build Sass
+const buildSass = require('./lib/build/sass')
+buildSass()
+
 // Application
 const app = express()
 
 // Express Middleware
+// -- Static routes
+app.use(express.static('dist'))
 // -- Body Parser
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true, strict: true }))

@@ -25,7 +25,7 @@
 
     {%- for item in event.prices -%}
       {%- set hint -%}
-        {{- item.cost -}}
+        Cost: £{{- item.cost -}}
       {%- endset -%}
 
       {{- checkbox({
