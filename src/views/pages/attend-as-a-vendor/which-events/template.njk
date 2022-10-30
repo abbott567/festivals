@@ -1,0 +1,45 @@
+
+{%- extends 'layouts/base.njk' -%}
+
+{%- block main -%}
+
+{{- errorSummary(errors) -}}
+
+
+<form method="post" novalidate>
+  <fieldset>
+    <legend>
+      <h1>
+        Which events are you attending?
+      </h1>
+    </legend>
+    
+    {%- if errors -%}
+      <p>
+        {{- errors[0].hint -}}
+      </p>
+    {%- endif -%}
+
+    {%- for event in events -%}
+      {%- set hint -%}
+        {{- event.location -}},{{- ' ' -}}{{- event.date -}}.
+      {%- endset -%}
+
+      {{- checkbox({
+        id: event.id,
+        name: 'events-attending[]',
+        label: event.name,
+        hint: hint,
+        errors: errors,
+        session: data.eventsAttending
+      }) -}}
+    {%- endfor -%}
+  </fieldset>
+
+  <button>
+    Continue
+  </button>
+
+</form>
+
+{%- endblock -%}

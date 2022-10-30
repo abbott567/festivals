@@ -1,0 +1,40 @@
+Hello {{data.owner.name}},
+
+Thanks for registering your interest with our food and drink festivals. This is 
+not a booking confirmation. We'll still need to do the official stuff later.
+
+This is a copy of the things you told us you need. We have a copy too, so 
+hopefully nothing gets missed.
+
+Your business
+- Exhibitor name:
+{{data.business['exhibitor-name']}}
+- Type of products:
+{{data.business['type-of-products']}}
+
+Your contact details
+Name:
+{{data.owner.name}}
+Phone:
+{{data.owner.phone}}
+Email:
+{{data.owner.email}}
+Address:
+{{data.owner.address}}
+
+Events you're attending:
+{% for event in data.eventsAttending %}
+Event {{loop.index}}
+
+Event details:
+{{event.name}}
+{{event.location}} {{event.date}}
+
+Requested items:
+{% for item in event.requestedItems -%}
+  £{{item.cost}} {{item.name}}<br>
+{%- endfor -%}
+
+Estimated cost:
+£{{event.estimatedCost}}
+{%- endfor %}

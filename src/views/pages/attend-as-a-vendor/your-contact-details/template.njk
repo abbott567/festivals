@@ -1,0 +1,53 @@
+
+{%- extends 'layouts/base.njk' -%}
+
+{%- block main -%}
+
+{{ errorSummary(errors) }}
+<h1>
+  Your contact details
+</h1>
+
+<form method="post" novalidate>
+
+  {{- textInput({
+    id: 'name',
+    name: 'owner[name]',
+    label: 'Name',
+    value: data.owner.name,
+    errors: errors
+  }) -}}
+
+  {{- textInput({
+    id: 'phone',
+    type: 'tel',
+    name: 'owner[phone]',
+    label: 'Phone',
+    value: data.owner.phone,
+    errors: errors
+  }) -}}
+
+  {{- textInput({
+    id: 'email',
+    type: 'email',
+    name: 'owner[email]',
+    label: 'Email',
+    value: data.owner.email,
+    errors: errors
+  }) -}}
+
+  {{- textArea({
+    id: 'address',
+    label: 'Address',
+    name: 'owner[address]',
+    value: data.owner.address,
+    errors: errors
+  }) -}}
+
+  <button>
+    Continue
+  </button>
+
+</form>
+
+{%- endblock -%}

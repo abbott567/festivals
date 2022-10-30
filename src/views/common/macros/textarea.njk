@@ -1,0 +1,10 @@
+{%- macro textArea(params) -%}
+<div class="form-control">
+  <label for="{{- params.id -}}-input">
+    {{- params.label -}}
+  </label>
+  <textarea id="{{- params.id -}}-input" name="{{- params.name -}}">
+    {{- params.value -}}
+  </textarea>
+</div>
+{%- endmacro -%}

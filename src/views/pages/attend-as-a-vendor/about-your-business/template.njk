@@ -1,0 +1,32 @@
+
+{%- extends 'layouts/base.njk' -%}
+
+{%- block main -%}
+
+{{- errorSummary(errors) -}}
+<h1>
+  About your buisness
+</h1>
+
+<form method="post" novalidate>
+  {{- textInput({
+    id: 'exhibitor-name',
+    name: 'business[exhibitor-name]',
+    label: 'Exhibitor name',
+    session: session,
+    value: data.business['exhibitor-name'],
+    errors: errors
+  }) -}}
+
+  {{- textInput({
+    id: 'type-of-products',
+    name: 'business[type-of-products]',
+    label: 'What type of products do you sell?',
+    value: data.business['type-of-products'],
+    errors: errors
+  }) -}}
+
+  <button>Continue</button>
+</form>
+
+{%- endblock -%}

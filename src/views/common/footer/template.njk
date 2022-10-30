@@ -1,0 +1,17 @@
+<footer>
+  <p>
+    © Some copyright stuff
+  </p>
+</footer>
+
+{%- if env === 'dev' -%}
+<p>
+  Env: <code>{{- env -}}</code>
+</p>
+<p>
+  Data:
+  <pre style="white-space: pre-wrap;">
+    {{- data|dump(2)|safe -}}
+  </pre>
+</p>
+{%- endif -%}
