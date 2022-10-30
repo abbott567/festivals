@@ -23,7 +23,8 @@
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "webpack": "^5.74.0"
   },
   "standard": {
     "env": [

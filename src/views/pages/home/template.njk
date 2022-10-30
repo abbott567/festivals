@@ -2,29 +2,46 @@
 {%- extends 'layouts/base.njk' -%}
 
 {%- block main -%}
-  <p>
-    Great North Feast in the park
-    South Shields
-    27, 28 and 29 May 2023
-  </p>
-  <p>
-    Feast
-    Whitley Bay
-    17 and 18 June
-  </p>
-  <p>
-    Feast
-    Whitley Bay
-    8 and 9 July
-  </p>
-  <p>
-    Feast
-    Cramlington
-    1 and 2 July
-  </p>
-  <p>
-    Feast in the park
-    South Shields
-    Date???
-  </p>
+
+<div class="hero">
+  <div class="hero-body">
+    <div class="hero-content grid-container full align-left">
+
+      <h1>Welcome</h1>
+      <p>
+        Lorem ipsum sit amet.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container full align-centre">
+  <h2>Our events</h2>
+</div>
+<div class="grid-container quarters">
+  {%- for event in events -%}
+    {%- set content -%}
+      <p class="date">{{- event.date -}}</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+      </p>
+      <p class="align-centre">
+        <a href="/events/{{- event.id -}}">More information <span class="visually-hidden">about event 1</span></a>
+      </p>
+    {%- endset -%}
+
+    {{ card({
+      heading: { 
+        text: event.name,
+        level: '2'
+      },
+      image: {
+        src: 'https://placekitten.com/335/335',
+        alt: ''
+      },
+      content: content
+    }) }}
+  {%- endfor -%}
+</div>
+
 {%- endblock -%}

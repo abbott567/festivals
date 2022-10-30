@@ -4,9 +4,13 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 
-// Build Sass
+// Build dist
+// -- Sass
 const buildSass = require('./lib/build/sass')
 buildSass()
+// -- Webpack
+const buildWebpack = require('./lib/build/webpack')
+buildWebpack()
 
 // Application
 const app = express()

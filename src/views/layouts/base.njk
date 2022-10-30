@@ -2,6 +2,7 @@
 {%- from '../common/macros/textarea.njk' import textArea with context -%}
 {%- from '../common/macros/error-summary.njk' import errorSummary with context -%}
 {%- from '../common/macros/checkbox.njk' import checkbox with context -%}
+{%- from '../common/macros/card.njk' import card with context -%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,5 +20,6 @@
       {%- block main -%}{%- endblock -%}
     </main>
     {%- include 'common/footer/template.njk' -%}
+    <script src="/javascripts/bundle.min.js"></script>
   </body>
 </html>

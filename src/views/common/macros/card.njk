@@ -1,0 +1,16 @@
+{%- macro card(params) -%}
+<div class="card">
+  <div class="card-image">
+    <img src="{{- params.image.src -}}" alt="{{- params.image.alt -}}">
+  </div>
+
+  <div class="card-content">
+    <div class="content">
+      <h{{- params.heading.level }} class="heading-s">
+        {{- params.heading.text-}}
+      </h{{- params.heading.level }}>
+      {{params.content|safe}}
+    </div>
+  </div>
+</div>
+{%- endmacro -%}
