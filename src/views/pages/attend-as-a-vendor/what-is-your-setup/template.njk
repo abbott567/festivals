@@ -3,44 +3,45 @@
 
 {%- block main -%}
 
-{{- errorSummary(errors) -}}
-<h1>
-  {{- event.name -}}
-</h1>
-<p>
-  {{- event.location -}}{{- ' ' -}}{{- event.date -}}
-</p>
+<div class="grid-container full align-left">
+  {{- errorSummary(errors) -}}
+  <h1>
+    {{- event.name -}}
+  </h1>
+  <p>
+    {{- event.location -}}{{- ' ' -}}{{- event.date -}}
+  </p>
 
-<form method="post" novalidate>
-  <fieldset>
-    <legend>
-        What is your setup for {{- event.name -}}?
-    </legend>
+  <form method="post" novalidate>
+    <fieldset>
+      <legend class="heading-m">
+          What is your setup for {{- event.name -}}?
+      </legend>
 
-    {%- if errors -%}
-      <p>
-        {{- errors[0].hint -}}
-      </p>
-    {%- endif -%}
+      {%- if errors -%}
+        <p>
+          {{- errors[0].hint -}}
+        </p>
+      {%- endif -%}
 
-    {%- for item in event.prices -%}
-      {%- set hint -%}
-        Cost: £{{- item.cost -}}
-      {%- endset -%}
+      {%- for item in event.prices -%}
+        {%- set hint -%}
+          Cost: £{{- item.cost -}}
+        {%- endset -%}
 
-      {{- checkbox({
-        id: item.id,
-        name: 'requestedSetup[]',
-        label: item.name,
-        hint: hint,
-        errors: errors,
-        session: event.requestedItems
-      }) -}}
-    {%- endfor -%}
-  </fieldset>
+        {{- checkbox({
+          id: item.id,
+          name: 'requestedSetup[]',
+          label: item.name,
+          hint: hint,
+          errors: errors,
+          session: event.requestedItems
+        }) -}}
+      {%- endfor -%}
+    </fieldset>
 
-  <button class="button button-primary">Continue</button>
-
-</form>
+    <button class="button button-primary">Continue</button>
+  </form>
+</div>
 
 {%- endblock -%}
