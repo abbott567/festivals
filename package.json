@@ -20,11 +20,11 @@
     "fs-jetpack": "^5.1.0",
     "node-sass": "^7.0.3",
     "nodemailer": "^6.8.0",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "webpack": "^5.74.0"
   },
   "devDependencies": {
-    "standard": "^17.0.0",
-    "webpack": "^5.74.0"
+    "standard": "^17.0.0"
   },
   "standard": {
     "env": [
