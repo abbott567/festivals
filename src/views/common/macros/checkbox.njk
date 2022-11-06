@@ -1,11 +1,12 @@
 {%- macro checkbox(params) -%}
 
-  <div class="form-control">
+<div class="form-control{{' form-control--error' if hasErrors}}">
+  <div class="checkbox">
     <input 
       id="{{- params.id -}}-input" 
+      class="checkbox__input" 
       type="checkbox" 
       name="{{- params.name -}}" 
-      aria-describedby="{{- params.id -}}-hint" 
       value="{{- params.id -}}" 
       {%- for item in params.session -%}
         {%- if item.id === params.id -%}
@@ -13,13 +14,15 @@
         {%- endif -%}
       {%- endfor -%}
     >
-    <label for="{{- params.id -}}-input">
-      {{- params.label -}}
-    </label>
+    <label for="{{- params.id -}}-input" class="checkbox__label">
+      <span class="checkbox__text">{{- params.label -}}</span>
     {%- if params.hint -%}
-      <div id="{{- params.id -}}-hint">
+      <span id="{{- params.id -}}-hint" class="checkbox__hint">
         {{- params.hint -}}
-      </div>
+      </span>
     {%- endif -%}
+    </label>
   </div>
+</div>
+
 {%- endmacro -%}

@@ -3,45 +3,42 @@
 
 {%- block main -%}
 
-<div class="hero">
-  <div class="hero-body">
-    <div class="hero-content grid-container full align-left">
-
-      <h1>Welcome</h1>
-      <p>
-        Lorem ipsum sit amet.
-      </p>
-    </div>
+<div class="theme-container theme-container--white">
+  <div class="grid-container full align-centre">
+    <h2>Our events</h2>
   </div>
 </div>
 
-<div class="grid-container full align-centre">
-  <h2>Our events</h2>
-</div>
-<div class="grid-container quarters">
-  {%- for event in events -%}
-    {%- set content -%}
-      <p class="date">{{- event.date -}}</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      </p>
-      <p class="align-centre">
-        <a href="/events/{{- event.id -}}">More information <span class="visually-hidden">about event 1</span></a>
-      </p>
-    {%- endset -%}
+<div class="theme-container theme-container--white">
+  <div class="grid-container thirds">
+    {%- for event in events -%}
+      <div>
+        {%- set content -%}
+          <p class="date">{{- event.date -}}</p>
+          <p>{{- event.name -}}</p>
+        {%- endset -%}
 
-    {{ card({
-      heading: { 
-        text: event.name,
-        level: '2'
-      },
-      image: {
-        src: 'https://placekitten.com/335/335',
-        alt: ''
-      },
-      content: content
-    }) }}
-  {%- endfor -%}
+        {%- set footer -%}
+          <p class="align-centre">
+            <a href="/events/{{- event.id -}}">More information <span class="visually-hidden">about event 1</span></a>
+          </p>
+        {%- endset -%}
+
+        {{ card({
+          heading: { 
+            text: event.address.city,
+            level: '3'
+          },
+          image: {
+            src: event.image.src,
+            alt: event.image.alt
+          },
+          content: content,
+          footer: footer
+        }) }}
+      </div>
+    {%- endfor -%}
+  </div>
 </div>
 
 {%- endblock -%}

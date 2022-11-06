@@ -3,42 +3,43 @@
 
 {%- block main -%}
 
-<div class="grid-container full align-left">
+<div class="theme-container theme-container--white">
+  <div class="grid-container full align-left">
 
-  {{- errorSummary(errors) -}}
+    {{- errorSummary(errors) -}}
 
-  <form method="post" novalidate>
-    <fieldset>
-      <legend>
-        <h1>
-          Which events are you attending?
-        </h1>
-      </legend>
-      
-      {%- if errors -%}
-        <p>
-          {{- errors[0].hint -}}
-        </p>
-      {%- endif -%}
+    <form method="post" novalidate>
+      <fieldset class="{{'form-control--error' if errors}}">
+        <legend>
+          <h1>
+            Which events are you attending?
+          </h1>
+        </legend>
+        
+        {%- if errors -%}
+          <p class="error-message">
+            {{- errors[0].hint -}}
+          </p>
+        {%- endif -%}
 
-      {%- for event in events -%}
-        {%- set hint -%}
-          {{- event.location -}},{{- ' ' -}}{{- event.date -}}.
-        {%- endset -%}
+        {%- for event in events -%}
+          {%- set hint -%}
+            {{- event.address.city -}},{{- ' ' -}}{{- event.date -}}.
+          {%- endset -%}
 
-        {{- checkbox({
-          id: event.id,
-          name: 'events-attending[]',
-          label: event.name,
-          hint: hint,
-          errors: errors,
-          session: data.eventsAttending
-        }) -}}
-      {%- endfor -%}
-    </fieldset>
+          {{- checkbox({
+            id: event.id,
+            name: 'events-attending[]',
+            label: event.name,
+            hint: hint,
+            errors: errors,
+            session: data.eventsAttending
+          }) -}}
+        {%- endfor -%}
+      </fieldset>
 
-    <button class="button button-primary">Continue</button>
-  </form>
+      <button class="button button-primary">Continue</button>
+    </form>
+  </div>
 </div>
-
 {%- endblock -%}

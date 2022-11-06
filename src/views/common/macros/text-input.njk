@@ -4,19 +4,28 @@
   {%- set type = 'type="' + params.type + '"' -%}
 {%- endif -%}
 
-<div class="form-control">
+{%- set hasErrors = false -%}
+{%- set errorMessage = '' -%}
+ {%- if params.errors -%}
+  {%- for error in params.errors -%}
+    {%- if error.id === params.id -%}
+      {%- set hasErrors = true -%}
+      {%- set errorMessage = error.hint -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<div class="form-control{{' form-control--error' if hasErrors}}">
   <label for="{{- params.id -}}-input">
     {{- params.label -}}
   </label>
-  {%- if params.errors -%}
-    {%- for error in params.errors -%}
-      {%- if error.id === params.id -%}
-        <p>
-          {{- error.hint -}}
-        </p>
-      {%- endif -%}
-    {%- endfor -%}
+  
+  {%- if hasErrors -%}
+    <p class="error-message">
+      {{- errorMessage -}}
+    </p>
   {%- endif -%}
+
   <input 
     id="{{- params.id -}}-input"
     name="{{- params.name -}}"

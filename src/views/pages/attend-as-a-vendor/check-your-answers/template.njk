@@ -2,106 +2,107 @@
 {%- extends 'layouts/base.njk' -%}
 
 {%- block main -%}
+<div class="theme-container theme-container--white">
+  <div class="grid-container full align-left">
+    {{- errorSummary(errors) -}}
+    <h1>
+      Check your details
+    </h1>
 
-<div class="grid-container full align-left">
-  {{- errorSummary(errors) -}}
-  <h1>
-    Check your details
-  </h1>
-
-  <h2>
-    About your business
-  </h2>
-  <dl>
-    <dt>
-      Exhibitor name:
-    </dt>
-    <dd>
-      {{ data.business['exhibitor-name'] }}
-    </dd>
-    <dt>
-      Type of products:
-    </dt>
-    <dd>
-      {{ data.business['type-of-products'] }}
-    </dd>
-  </dl>
-
-  <h2>
-    Your contact details
-  </h2>
-  <dl>
-    <dt>
-      Name: 
-    </dt>
-    <dd>
-      {{- data.owner.name -}}
-    </dd>
-    <dt>
-      Phone: 
-    </dt>
-    <dd>
-      {{- data.owner.phone -}}
-    </dd>
-    <dt>
-      Email: 
-    </dt>
-    <dd>
-      {{- data.owner.email -}}
-    </dd>
-    <dt>
-      Address: 
-    </dt>
-    <dd style="white-space: pre-wrap">
-      {{- data.owner.address -}}
-    </dd>
-  </dl>
-
-  <h2>
-    Events you're attending
-  </h2>
-  {%- for event in data.eventsAttending -%}
-    <h3>
-      Event {{- loop.index -}}
-    </h3>
+    <h2>
+      About your business
+    </h2>
     <dl>
       <dt>
-        Event details 
+        Exhibitor name:
       </dt>
       <dd>
-        {{- event.name -}}<br>
-        {{- event.location -}}{{- ' - ' -}}{{- event.date -}}
+        {{ data.business['exhibitor-name'] }}
+      </dd>
+      <dt>
+        Type of products:
+      </dt>
+      <dd>
+        {{ data.business['type-of-products'] }}
       </dd>
     </dl>
+
+    <h2>
+      Your contact details
+    </h2>
     <dl>
       <dt>
-        Requested items
+        Name: 
       </dt>
       <dd>
-        {%- for item in event.requestedItems -%}
-          £{{- item.cost -}}{{- ' - ' -}}{{- item.name -}}<br>
-        {%- endfor -%}
+        {{- data.owner.name -}}
       </dd>
-    </dl>
-    <dl>
       <dt>
-        Estimated cost
+        Phone: 
       </dt>
       <dd>
-          £{{- event.estimatedCost -}}
+        {{- data.owner.phone -}}
+      </dd>
+      <dt>
+        Email: 
+      </dt>
+      <dd>
+        {{- data.owner.email -}}
+      </dd>
+      <dt>
+        Address: 
+      </dt>
+      <dd style="white-space: pre-wrap">
+        {{- data.owner.address -}}
       </dd>
     </dl>
-  {%- endfor -%}
 
-  <p>
-    Check all the information is correct.
-  </p>
+    <h2>
+      Events you're attending
+    </h2>
+    {%- for event in data.eventsAttending -%}
+      <h3>
+        Event {{- loop.index -}}
+      </h3>
+      <dl>
+        <dt>
+          Event details 
+        </dt>
+        <dd>
+          {{- event.name -}}<br>
+          {{- event.location -}}{{- ' - ' -}}{{- event.date -}}
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          Requested items
+        </dt>
+        <dd>
+          {%- for item in event.requestedItems -%}
+            £{{- item.cost -}}{{- ' - ' -}}{{- item.name -}}<br>
+          {%- endfor -%}
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          Estimated cost
+        </dt>
+        <dd>
+            £{{- event.estimatedCost -}}
+        </dd>
+      </dl>
+    {%- endfor -%}
 
-  <form method="post">
-    <button class="button button-primary">
-      Submit and register interest
-    </button>
-  </form>
+    <p>
+      Check all the information is correct.
+    </p>
+
+    <form method="post">
+      <button class="button button-primary">
+        Submit and register interest
+      </button>
+    </form>
+  </div>
 </div>
 
 {%- endblock -%}

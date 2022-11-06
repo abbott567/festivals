@@ -15,8 +15,9 @@
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     {%- include 'common/header/template.njk' -%}
-    <main>
+    <main id="main">
       {%- block main -%}{%- endblock -%}
     </main>
     {%- include 'common/footer/template.njk' -%}
