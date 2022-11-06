@@ -1,0 +1,28 @@
+
+{%- extends 'layouts/base.njk' -%}
+
+{%- block main -%}
+
+<div class="theme-container theme-container--white">
+  <div class="grid-container full align-centre">
+    <h1>
+      <span class="event__h1__name">{{event.name}}</span><br>
+      <span class="event__h1__date">{{event.date}}</span>
+    </h1>
+  </div>
+</div>
+
+<div class="theme-container theme-container--white">
+  <div class="grid-container full">
+    <div class="align-left">
+      <h2>How to find us</h2>
+      <p>
+        {{- event.address.line1}}, {% if event.address.line2 -%}{{- event.address.line2 -}},{%- endif %} 
+        {{event.address.city}}, {{event.address.postcode -}}
+      </p>
+      <iframe src="{{event.map}}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+{%- endblock -%}
