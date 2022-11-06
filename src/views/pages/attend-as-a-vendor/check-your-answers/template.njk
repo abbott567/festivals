@@ -57,11 +57,11 @@
       </dd>
     </dl>
 
-    <h2>
+    <h2 style="margin-bottom: 0;">
       Events you're attending
     </h2>
     {%- for event in data.eventsAttending -%}
-      <h3>
+      <h3 style="margin-bottom: 0;">
         Event {{- loop.index -}}
       </h3>
       <dl>
@@ -72,8 +72,6 @@
           {{- event.name -}}<br>
           {{- event.location -}}{{- ' - ' -}}{{- event.date -}}
         </dd>
-      </dl>
-      <dl>
         <dt>
           Requested items
         </dt>
@@ -82,8 +80,6 @@
             £{{- item.cost -}}{{- ' - ' -}}{{- item.name -}}<br>
           {%- endfor -%}
         </dd>
-      </dl>
-      <dl>
         <dt>
           Estimated cost
         </dt>

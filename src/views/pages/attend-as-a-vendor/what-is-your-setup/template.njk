@@ -7,16 +7,17 @@
   <div class="grid-container full align-left">
     {{- errorSummary(errors) -}}
     <h1>
-      {{- event.name -}}
+      <span>{{- event.name -}}</span><br>
     </h1>
-    <p>
-      {{- event.location -}}{{- ' ' -}}{{- event.date -}}
+    <p id="date-and-location">
+      {{- event.address.city -}}<br>
+      {{- event.date -}}
     </p>
 
     <form method="post" novalidate>
       <fieldset class="{{'form-control--error' if errors}}">
-        <legend class="heading-m">
-            What is your setup for {{- event.name -}}?
+        <legend class="heading-m" aria-describedby="date-and-location">
+            What is your setup for {{event.name}}?
         </legend>
 
         {%- if errors -%}
