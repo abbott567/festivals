@@ -25,4 +25,19 @@
   </div>
 </div>
 
+{%- if articles.length > 0 -%}
+  <div class="theme-container theme-container--white">
+    <div class="grid-container full">
+      <div class="align-left">
+        <h2>Articles</h2>
+        <ul>
+          {%- for article in articles -%}
+            <li><a href="{{article.url}}">{{article.name}}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
 {%- endblock -%}
