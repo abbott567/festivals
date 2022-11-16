@@ -4,8 +4,9 @@ import app from './app.mjs'
 
 function serverStart () {
   const server = http.createServer(app)
-  server.listen(3001)
-  console.log(colours.green(`Server started on http://localhost:${3001}`))
+  const port = process.env.PORT || 3001
+  server.listen(port)
+  console.log(colours.green(`Server started on http://localhost:${port}`))
   return server
 }
 
