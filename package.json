@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/app/server/start.mjs",
+    "dev": "node src/dev/launch.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -18,12 +19,24 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "fs-jetpack": "^5.1.0",
+    "html-minifier": "^4.0.0",
     "node-sass": "^7.0.3",
     "nodemailer": "^6.8.0",
+    "nodemailer-sendinblue-transport": "^2.0.0",
     "nunjucks": "^3.2.3",
+    "slugify": "^1.6.5",
     "webpack": "^5.74.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.10",
+    "colors": "^1.4.0",
+    "cssnano": "^5.1.14",
+    "cssnano-preset-lite": "^2.1.3",
+    "node-watch": "^0.7.3",
+    "nodemon": "^2.0.20",
+    "postcss": "^8.4.19",
+    "sass": "^1.56.1",
     "standard": "^17.0.0"
   },
   "standard": {
