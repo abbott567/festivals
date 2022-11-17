@@ -1,7 +1,7 @@
 .header {  
   margin-top: 20px;
   min-height: 100px;
-  max-width: 960px;
+  max-width: var(--grid-max-width);
   margin: auto;
   background-color: rgba(255, 255, 255, .9);
   display: flex;

@@ -11,6 +11,10 @@ router.get('/', (req, res) => {
   res.render('pages/home/template.njk')
 })
 
+router.get('/press', (req, res) => {
+  res.render('pages/press/template.njk', { articles: newsArticles })
+})
+
 router.get('/events/:id', (req, res) => {
   const id = req.params.id
   const event = events.find(x => x.id === id)
