@@ -119,7 +119,7 @@ label > .label-body {
     content: "";
     position: absolute;
     display: inline-block;
-    top: 0;
+    top: var(--s-2);
     left: 0;
     width: var(--s2);
     height: var(--s2);
@@ -134,7 +134,7 @@ label > .label-body {
     content: "";
     position: absolute;
     display: inline-block;
-    top: var(--s-1);
+    top: var(--s0);
     left: var(--s-2);
     width: var(--s1);
     height: var(--s-1);
@@ -159,8 +159,8 @@ label > .label-body {
   }
   input[type="checkbox"] {
     position: absolute;
-    top: var(--s-1);
-    left: var(--s-1);
+    top: var(--s0);
+    left: var(--s0);
   }
   input[type="checkbox"]:checked + label:after {
     opacity: 1;
