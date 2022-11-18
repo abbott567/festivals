@@ -4,7 +4,7 @@ a {
   color: var(--link-colour);
   &:focus {
     color: var(--black);
-    border-bottom: 3px solid var(--black);
+    border-bottom: 3px solid var(--text-colour);
     background: var(--pink);
     outline: 5px solid var(--pink);
     outline-offset: -1px;
