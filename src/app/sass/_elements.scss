@@ -3,10 +3,10 @@
 a {
   color: var(--link-colour);
   &:focus {
-    color: black;
-    border-bottom: 3px solid black;
-    background: pink;
-    outline: 5px solid pink;
+    color: var(--black);
+    border-bottom: 3px solid var(--black);
+    background: var(--pink);
+    outline: 5px solid var(--pink);
     outline-offset: -1px;
     text-decoration: none;
   }

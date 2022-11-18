@@ -1,7 +1,7 @@
 .panel {
   padding: 30px;
   &--confirmation {
-    background-color: #4b7e4c;
+    background-color: var(--green);
     color: white;
     a {
       color: white;

@@ -39,6 +39,7 @@ html {
   box-sizing: inherit;
 }
 :root {
+  // Scale
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
@@ -51,6 +52,12 @@ html {
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+  // Colours
   --link-colour: #0c79ae;
   --border-colour: grey;
+  --text-colour: #4a4a4a;
+  --page-colour: #FAF9F6;
+  --error: #cc0000;
+  --sand: #fcf2e1;
+  --green: #4b7e4c;
 }
