@@ -1,7 +1,7 @@
 <footer>
-  <div class="theme-container">
-    <div class="grid-container thirds">
-      <div class="align-left">
+  <div class="container">
+    <div class="switcher">
+      <div>
         <h2>Events</h2>
         <ul>
           {%- for event in events -%}
@@ -12,7 +12,7 @@
         </ul>
       </div>
 
-      <div class="align-left">
+      <div>
         <h2>Contact us</h2>
         <ul>
           <li>
@@ -32,8 +32,8 @@
           </li>
         </ul>
       </div>
-
-      {# <div class="align-left">
+  {# 
+      <div>
         <h2>Support links</h2>
         <ul>
           <li>
@@ -55,22 +55,22 @@
       </div> #}
     </div>
 
-    <div class="grid-container full align-left">
+    <div class="box">
       <p>
         © Copyright Proper Food and Drink Festivals
       </p>
     </div>
-
-    {%- if env === 'dev' -%}
-    <p>
-      Env: <code>{{- env -}}</code>
-    </p>
-    <p>
-      Data:
-      <pre style="white-space: pre-wrap;">
-        {{- data|dump(2)|safe -}}
-      </pre>
-    </p>
-    {%- endif -%}
   </div>
 </footer>
+
+{%- if env === 'dev' -%}
+  <p>
+    Env: <code>{{- env -}}</code>
+  </p>
+  <p>
+    Data:
+    <pre style="white-space: pre-wrap;">
+      {{- data|dump(2)|safe -}}
+    </pre>
+  </p>
+{%- endif -%}  

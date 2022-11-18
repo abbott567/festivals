@@ -1,0 +1,13 @@
+@mixin switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > * {
+    flex-grow: 1;
+    flex-basis: calc(( 30rem - 100%) * 999);
+  }
+  & > :nth-last-child(n+ 5),
+  & > :nth-last-child(n+ 5) ~ * {
+    flex-basis: 100%;
+  }
+}

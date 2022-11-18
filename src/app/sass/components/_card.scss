@@ -1,56 +1,24 @@
-.clickable {
-  cursor: pointer;
-  transition: all .2s ease-in-out;
-  &:hover {
-    transform: scale(1.03);
-  }
-}
+@use '../layout/stack.scss' as *;
 
 .card {
-  height: 100%;
-  max-width: 100%;
+  @include stack;
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .1), 0 0px 0 1px rgba(10, 10, 10, .2);
   color: #4a4a4a;
-  display: flex;
-  flex-direction: column;
-  
-  .card__header {
-    min-height:50px;
-    width: 100%;
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    img:first-of-type {
-      border-top-left-radius: 0.25rem;
-      border-top-right-radius: 0.25rem;
-    }
+
+  img:first-of-type {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
   }
-  .card__body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: var(--s1);
+    font-weight: 500;
+    margin-bottom: .5rem;
   }
-  .card__content {
-    flex: 1;
-    h1, h2, h3, h4, h5, h6 {
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: .5rem;
-    }
-    .date {
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-  }
-  .card__footer {
-    display: flex;
-    flex: 1;
-    align-items: flex-end;
-    justify-content: center;
-    min-height:50px;
+  .date {
+    font-size: var(--s0);
+    font-weight: 700;
   }
 }

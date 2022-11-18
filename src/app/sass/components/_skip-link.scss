@@ -17,9 +17,11 @@
     text-decoration: underline;
     position: static;
     width: auto;
+    max-width: 1000px;
     height: auto;
-    margin: inherit;
-    margin-bottom: 2rem;
+    margin: auto;
+    margin-bottom: var(--s0);
+    padding: var(--s0);
     overflow: visible;
     clip: auto;
     -webkit-clip-path: none;

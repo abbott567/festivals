@@ -3,51 +3,56 @@
 
 {%- block main -%}
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full align-left">
-    {{ errorSummary(errors) }}
+  {{ errorSummary(errors) }}
+
+  <div class="box">
     <h1>
       Your contact details
     </h1>
 
     <form method="post" novalidate>
 
-      {{- textInput({
-        id: 'name',
-        name: 'owner[name]',
-        label: 'Name',
-        value: body.owner.name if errors else data.owner.name,
-        errors: errors
-      }) -}}
+      <div class="stack">
+        {{- textInput({
+          id: 'name',
+          name: 'owner[name]',
+          label: 'Name',
+          value: body.owner.name if errors else data.owner.name,
+          errors: errors
+        }) -}}
 
-      {{- textInput({
-        id: 'phone',
-        type: 'tel',
-        name: 'owner[phone]',
-        label: 'Phone',
-        value: body.owner.phone if errors else data.owner.phone,
-        errors: errors
-      }) -}}
+        {{- textInput({
+          id: 'phone',
+          type: 'tel',
+          name: 'owner[phone]',
+          label: 'Phone',
+          value: body.owner.phone if errors else data.owner.phone,
+          errors: errors
+        }) -}}
 
-      {{- textInput({
-        id: 'email',
-        type: 'email',
-        name: 'owner[email]',
-        label: 'Email',
-        value: body.owner.email if errors else data.owner.email,
-        errors: errors
-      }) -}}
+        {{- textInput({
+          id: 'email',
+          type: 'email',
+          name: 'owner[email]',
+          label: 'Email',
+          value: body.owner.email if errors else data.owner.email,
+          errors: errors
+        }) -}}
 
-      {{- textArea({
-        id: 'address',
-        label: 'Address',
-        name: 'owner[address]',
-        value: body.owner.address if errors else data.owner.address,
-        errors: errors
-      }) -}}
+        {{- textArea({
+          id: 'address',
+          label: 'Address',
+          name: 'owner[address]',
+          value: body.owner.address if errors else data.owner.address,
+          errors: errors
+        }) -}}
 
-      <button class="button button-primary">Continue</button>
+        <div>
+          <button class="button">Continue</button>
+        </div>
+      </div>
+
     </form>
   </div>
-</div>
+
 {%- endblock -%}

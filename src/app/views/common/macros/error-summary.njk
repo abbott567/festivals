@@ -1,12 +1,14 @@
 {%- macro errorSummary(errors) -%}
   {%- if errors -%}
-    <div class="error-summary">
-      <h2>There is a problem</h2>
-      <ul>
-        {%- for error in errors -%}
-          <li>{{- error.message -}}</li>
-        {%- endfor -%}
-      </ul>
+    <div class="box">
+      <div class="error-summary">
+        <h2>There is a problem</h2>
+        <ul>
+          {%- for error in errors -%}
+            <li>{{- error.message -}}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
     </div>
   {%- endif -%}
 {%- endmacro -%}

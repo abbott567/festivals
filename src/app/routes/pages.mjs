@@ -22,6 +22,12 @@ router.get('/events/:id', (req, res) => {
   res.render('pages/event/template.njk', { event, articles })
 })
 
+// Routes for WebForm
 router.use(attendAsAVendor)
+
+router.get('*', (req, res) => {
+  res.status(404)
+  res.render('layouts/404.njk')
+})
 
 export default router

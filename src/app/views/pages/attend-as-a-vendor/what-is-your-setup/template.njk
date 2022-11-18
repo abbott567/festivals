@@ -3,9 +3,9 @@
 
 {%- block main -%}
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full align-left">
-    {{- errorSummary(errors) -}}
+  {{- errorSummary(errors) -}}
+
+  <div class="box">
     <h1>
       <span>{{- event.name -}}</span><br>
     </h1>
@@ -16,8 +16,8 @@
 
     <form method="post" novalidate>
       <fieldset class="{{'form-control--error' if errors}}">
-        <legend class="heading-m" aria-describedby="date-and-location">
-            What is your setup for {{event.name}}?
+        <legend aria-describedby="date-and-location">
+            <h2>What is your setup for {{event.name}}?</h2>
         </legend>
 
         {%- if errors -%}
@@ -45,6 +45,5 @@
       <button class="button button-primary">Continue</button>
     </form>
   </div>
-</div>
 
 {%- endblock -%}

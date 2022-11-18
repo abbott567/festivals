@@ -2,7 +2,6 @@
 {%- from '../common/macros/textarea.njk' import textArea with context -%}
 {%- from '../common/macros/error-summary.njk' import errorSummary with context -%}
 {%- from '../common/macros/checkbox.njk' import checkbox with context -%}
-{%- from '../common/macros/card.njk' import card with context -%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,11 +14,17 @@
   </head>
 
   <body>
+    <div class="event-image-container">
     <a href="#main" class="skip-link">Skip to main content</a>
-    {%- include 'common/header/template.njk' -%}
-    <main id="main">
-      {%- block main -%}{%- endblock -%}
-    </main>
+    <div class="container">
+      {%- include 'common/header/template.njk' -%}
+    </div>
+      <main id="main">
+        <div class="container container--white">
+          {%- block main -%}{%- endblock -%}
+        </div>
+      </main>
+    </div>
     {%- include 'common/footer/template.njk' -%}
     <script src="/javascripts/bundle.min.js"></script>
   </body>

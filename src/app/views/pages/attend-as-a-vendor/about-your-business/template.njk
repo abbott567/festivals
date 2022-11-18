@@ -3,34 +3,37 @@
 
 {%- block main -%}
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full align-left">
-    {{- errorSummary(errors) -}}
+  {{- errorSummary(errors) -}}
+
+  <div class="box">
     <h1>
       About your buisness
     </h1>
 
     <form method="post" novalidate>
-      {{- textInput({
-        id: 'exhibitor-name',
-        name: 'business[exhibitor-name]',
-        label: 'Exhibitor name',
-        session: session,
-        value:  body.business['exhibitor-name'] if errors else data.business['exhibitor-name'],
-        errors: errors
-      }) -}}
+      <div class="stack">
+        {{- textInput({
+          id: 'exhibitor-name',
+          name: 'business[exhibitor-name]',
+          label: 'Exhibitor name',
+          session: session,
+          value:  body.business['exhibitor-name'] if errors else data.business['exhibitor-name'],
+          errors: errors
+        }) -}}
 
-      {{- textInput({
-        id: 'type-of-products',
-        name: 'business[type-of-products]',
-        label: 'What type of products do you sell?',
-        value: body.business['type-of-products'] if errors else data.business['type-of-products'],
-        errors: errors
-      }) -}}
+        {{- textInput({
+          id: 'type-of-products',
+          name: 'business[type-of-products]',
+          label: 'What type of products do you sell?',
+          value: body.business['type-of-products'] if errors else data.business['type-of-products'],
+          errors: errors
+        }) -}}
 
-      <button class="button button-primary">Continue</button>
+        <div>
+          <button class="button">Continue</button>
+        </div>
+      </div>
     </form>
-
-    {%- endblock -%}
   </div>
-</div>
+
+{%- endblock -%}

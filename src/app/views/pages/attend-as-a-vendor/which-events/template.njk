@@ -3,11 +3,9 @@
 
 {%- block main -%}
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full align-left">
+  {{- errorSummary(errors) -}}
 
-    {{- errorSummary(errors) -}}
-
+  <div class="box">
     <form method="post" novalidate>
       <fieldset class="{{'form-control--error' if errors}}">
         <legend>
@@ -41,5 +39,5 @@
       <button class="button button-primary">Continue</button>
     </form>
   </div>
-</div>
+
 {%- endblock -%}

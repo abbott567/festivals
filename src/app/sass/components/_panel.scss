@@ -1,0 +1,11 @@
+.panel {
+  padding: 30px;
+  &--confirmation {
+    background-color: #4b7e4c;
+    color: white;
+    a {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

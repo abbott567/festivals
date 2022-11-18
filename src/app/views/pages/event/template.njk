@@ -2,71 +2,45 @@
 {%- extends 'layouts/base.njk' -%}
 
 {%- block main -%}
-
-<div class="theme-container theme-container--white">
-  <div class="grid-container full align-centre">
+  <div class="box">
     <h1>
       <span class="event__h1__name">{{event.name}}</span><br>
       <span class="event__h1__date">{{event.date}}</span>
     </h1>
-  </div>
-</div>
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full">
-    <div class="align-left">
-      <h2>How to find us</h2>
-      <p>
-        {{- event.address.line1}}, {% if event.address.line2 -%}{{- event.address.line2 -}},{%- endif %} 
-        {{event.address.city}}, {{event.address.postcode -}}
-      </p>
-      <iframe src="{{event.map}}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</div>
+    <h2>How to find us</h2>
+    <p>
+      {{- event.address.line1}}, {% if event.address.line2 -%}{{- event.address.line2 -}},{%- endif %} 
+      {{event.address.city}}, {{event.address.postcode -}}
+    </p>
+    <iframe src="{{event.map}}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full">
-    <div class="align-left">
-      <h2>About {{event.name}}</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 
-        1500s, when an unknown printer took a galley of type and scrambled it to 
-        make a type specimen book. It has survived not only five centuries, but 
-        also the leap into electronic typesetting, remaining essentially unchanged. 
-        It was popularised in the 1960s with the release of Letraset sheets 
-        containing Lorem Ipsum passages, and more recently with desktop publishing 
-        software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-    </div>
-  </div>
-</div>
+    <h2>About {{event.name}}</h2>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 
+      1500s, when an unknown printer took a galley of type and scrambled it to 
+      make a type specimen book. It has survived not only five centuries, but 
+      also the leap into electronic typesetting, remaining essentially unchanged. 
+      It was popularised in the 1960s with the release of Letraset sheets 
+      containing Lorem Ipsum passages, and more recently with desktop publishing 
+      software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
 
-<div class="theme-container theme-container--white">
-  <div class="grid-container full">
-    <div class="align-left">
-      <h2>Stay up to date</h2>
-      <p>
-        <a href="#">Join our Facebook group</a>
-      </p>
-    </div>
-  </div>
-</div>
+    <h2>Stay up to date</h2>
+    <p>
+      <a href="#">Join our Facebook group</a>
+    </p>
 
-{%- if articles.length > 0 -%}
-  <div class="theme-container theme-container--white">
-    <div class="grid-container full">
-      <div class="align-left">
-        <h2>Articles</h2>
-        <ul>
-          {%- for article in articles -%}
-            <li><a href="{{article.url}}">{{article.name}}</a></li>
-          {%- endfor -%}
-        </ul>
-      </div>
-    </div>
+    {%- if articles.length > 0 -%}
+      <h2>Articles</h2>
+      <ul>
+        {%- for article in articles -%}
+          <li><a href="{{article.url}}">{{article.name}}</a></li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
   </div>
-{%- endif -%}
+
 
 {%- endblock -%}

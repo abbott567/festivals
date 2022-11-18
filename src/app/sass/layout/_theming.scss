@@ -1,0 +1,64 @@
+body {
+  background-image: 
+    url(/images/background-top-right.png),
+    url(/images/background-top-left.png),
+    url(/images/background-sky.jpg);
+  background-size: 
+    auto,
+    auto,
+    cover;
+  background-position: 
+    top right,
+    top left,
+    center center;
+  background-repeat: no-repeat;
+  color: #2c2c2c;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  &--white {
+    background-color: white;
+  }
+}
+
+.event-image-container {
+  padding: var(--s0);
+  padding-bottom: calc(var(--s5) * 2);
+  background-image:
+    url(/images/background-event.png),
+    url(/images/background-grass.png),
+    url(/images/background-sun.png);
+  background-size:
+    70%,
+    contain,
+    contain;
+  background-position:
+    bottom center,
+    bottom center,
+    bottom center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 580px) {
+    padding-bottom: calc(var(--s5) + 2rem);
+    background-size:
+      75%,
+      contain,
+      contain;
+  }
+  @media (min-width: 1000px) {
+    padding-bottom: calc(var(--s5) * 3);
+    background-size:
+      70%,
+      contain,
+      contain;
+  }
+}
+
+.logo {
+  background-color: rgba(255, 255, 255, .9);
+  padding: var(--s1);
+  font-weight: 700;
+  font-size: var(--s2);
+}
