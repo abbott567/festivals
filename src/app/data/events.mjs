@@ -6,7 +6,7 @@ const events = [
       alt: ''
     },
     name: 'Great North Feast in the park',
-    date: '27 May - 29 May 2022',
+    date: '27 May to 29 May 2022',
     address: {
       line1: 'Bents Park',
       line2: 'Sea Rd',
@@ -50,7 +50,7 @@ const events = [
       alt: ''
     },
     name: 'Feast, Whitley Bay',
-    date: '17 June - 18 June 2023',
+    date: '17 June to 18 June 2023',
     address: {
       line1: 'Spanish City Plaza',
       line2: '',
@@ -79,7 +79,7 @@ const events = [
       alt: ''
     },
     name: 'Feast, Cramlington',
-    date: '1 July - 2 July 2023',
+    date: '1 July to 2 July 2023',
     address: {
       line1: 'Seven Oaks Park',
       line2: 'Dudley Lane',
@@ -123,7 +123,7 @@ const events = [
       alt: ''
     },
     name: 'Feast, Whitley Bay',
-    date: '8 July - 9 July 2023',
+    date: '8 July to 9 July 2023',
     address: {
       line1: 'Spanish City Plaza',
       line2: '',
@@ -152,7 +152,7 @@ const events = [
       alt: ''
     },
     name: 'Feast, Whitley Bay',
-    date: '19 August - 20 August 2023',
+    date: '19 August to 20 August 2023',
     address: {
       line1: 'Spanish City Plaza',
       line2: '',
@@ -181,7 +181,7 @@ const events = [
       alt: ''
     },
     name: 'Great North Feast in the park',
-    date: '26 - 28 August 2023',
+    date: '26 to 28 August 2023',
     address: {
       line1: 'Bents Park',
       line2: 'Sea Rd',
