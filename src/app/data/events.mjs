@@ -6,7 +6,7 @@ const events = [
       alt: ''
     },
     name: 'Great North Feast in the park',
-    date: '27 May to 29 May 2022',
+    date: '27 May to 29 May 2023',
     address: {
       line1: 'Bents Park',
       line2: 'Sea Rd',
