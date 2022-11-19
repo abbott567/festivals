@@ -1,7 +1,7 @@
 'use-strict'
 
 import events from '../data/events.mjs'
-import newsArticles from '../data/news-articles.mjs'
+import articles from '../data/news-articles.mjs'
 import attendAsAVendor from './attend-as-a-vendor/_all.mjs'
 import express from 'express'
 
@@ -12,14 +12,18 @@ router.get('/', (req, res) => {
 })
 
 router.get('/press', (req, res) => {
-  res.render('pages/press/template.njk', { articles: newsArticles })
+  res.render('pages/press/template.njk', { articles })
+})
+
+router.get('/sitemap', (req, res) => {
+  res.render('pages/sitemap/template.njk', { events, articles })
 })
 
 router.get('/events/:id', (req, res) => {
   const id = req.params.id
   const event = events.find(x => x.id === id)
-  const articles = newsArticles.filter(x => event.articles.includes(x.id))
-  res.render('pages/event/template.njk', { event, articles })
+  const filteredArticles = articles.filter(x => event.articles.includes(x.id))
+  res.render('pages/event/template.njk', { event, articles: filteredArticles })
 })
 
 // Routes for WebForm

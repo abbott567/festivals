@@ -49,7 +49,7 @@ const events = [
       src: '/images/event-whitley-bay-1.jpg',
       alt: ''
     },
-    name: 'Feast, Whitley Bay',
+    name: 'Feast',
     date: '17 June to 18 June 2023',
     address: {
       line1: 'Spanish City Plaza',
@@ -78,7 +78,7 @@ const events = [
       src: '/images/event-cramlington-1.jpg',
       alt: ''
     },
-    name: 'Feast, Cramlington',
+    name: 'Feast',
     date: '1 July to 2 July 2023',
     address: {
       line1: 'Seven Oaks Park',
@@ -122,7 +122,7 @@ const events = [
       src: '/images/event-whitley-bay-2.jpg',
       alt: ''
     },
-    name: 'Feast, Whitley Bay',
+    name: 'Feast',
     date: '8 July to 9 July 2023',
     address: {
       line1: 'Spanish City Plaza',
@@ -151,7 +151,7 @@ const events = [
       src: '/images/event-whitley-bay-3.jpg',
       alt: ''
     },
-    name: 'Feast, Whitley Bay',
+    name: 'Feast',
     date: '19 August to 20 August 2023',
     address: {
       line1: 'Spanish City Plaza',

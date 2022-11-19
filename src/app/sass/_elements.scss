@@ -34,3 +34,8 @@ iframe {
   height: 400px;
   border:0;
 }
+
+ul,
+ol {
+  line-height: var(--s1);
+}

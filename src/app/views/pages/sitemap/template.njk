@@ -1,0 +1,49 @@
+
+{%- extends 'layouts/base.njk' -%}
+{%- set pageTitle = 'Sitemap' -%}
+
+{%- block main -%}
+
+  <div class="box center">
+    <h1>
+      Sitemap
+    </h1>
+  </div>
+
+  <div class="box">
+    <h2>
+      Pages
+    </h2>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/attend-as-a-vendor">Attend as a vendor</a></li>
+    </ul>
+  
+    {%- if articles.length > 0 -%}
+      <h2>Events</h2>
+      <ul>
+        {%- for event in events -%}
+          <li>
+            <a href="/events/{{event.id}}">
+              {{event.name}} at {{event.address.city}} on {{event.date}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if articles.length > 0 -%}
+      <h2>Press articles</h2>
+      <ul>
+        {%- for article in articles -%}
+          <li>
+            <a href="{{article.url}}">
+              {{article.name}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+{%- endblock -%}

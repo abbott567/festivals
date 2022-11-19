@@ -1,19 +1,21 @@
 <footer>
   <div class="container">
     <div class="switcher">
-      <div>
-        <h2>Events</h2>
-        <ul>
+      <div class="box">
+        <h2 class="margin-bottom-!-0">Events</h2>
+        <ul class="stack margin-top-!-0">
           {%- for event in events -%}
-            <li>
-              <a href="/events/{{event.id}}">{{event.name}}</a>
+            <li class="margin-block-start-!-0">
+              <a href="/events/{{event.id}}">
+                {{event.name}}<br>{{event.address.city}}<br>{{event.date}}<span class="visually-hidden">at {{event.address.city}}</span>
+              </a>
             </li>
           {%- endfor -%}
         </ul>
       </div>
 
-      <div>
-        <h2>Contact us</h2>
+      <div class="box">
+        <h2 class="margin-bottom-!-0">Contact us</h2>
         <ul>
           <li>
             <a href="/attend-as-a-vendor">
@@ -31,28 +33,15 @@
             </a>
           </li>
         </ul>
-      </div>
-  {# 
-      <div>
-        <h2>Support links</h2>
+
+        <h2 class="margin-bottom-!-0">Support links</h2>
         <ul>
           <li>
-            <a href="/attend-as-a-vendor">
+            <a href="/sitemap">
               Sitemap
             </a>
           </li>
-          <li>
-            <a href="#">
-              Accessibility
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Privacy
-            </a>
-          </li>
-        </ul>
-      </div> #}
+      </div>
     </div>
 
     <div class="box">
