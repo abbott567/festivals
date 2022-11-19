@@ -2,18 +2,22 @@
 
 {%- block main -%}
 
+<h1 class="visually-hidden">
+  Welcome to Proper Food and Drink festivals
+</h1>
+
 <div class="center box">
-  <h2>Our events</h2>
+  <h2 class="heading-m">Our events</h2>
 </div>
 
 <div class="box grid padding-top:0">
   {%- for event in events -%}
     <div class="card center">
-      <div class="stack">
-        <div class="frame">
-          <img src="{{- event.image.src -}}" alt="{{- event.image.alt -}}">
-        </div>
+      <div class="frame">
+        <img src="{{- event.image.src -}}" alt="{{- event.image.alt -}}">
+      </div>
 
+      <div class="box">
         <h3>{{- event.address.city -}}</h3>
 
         <p class="date">{{- event.date -}}</p>
@@ -32,12 +36,12 @@
 </div>
 
 <div class="switcher">
-  <div class="center">
+  <div class="center box">
     <a href="https://www.chroniclelive.co.uk/whats-on/whats-on-news/gallery/whitley-bay-food-festival-returns-24810206">
       <img src="/images/logo-chronicle.png" alt="Chronicle article: Feast by the Sea returns to Whitley Bay with local food vendors serving up a treat">
     </a>
   </div>
-  <div class="center">
+  <div class="center box">
     <a href="https://www.shieldsgazette.com/whats-on/things-to-do/12-pictures-from-the-final-day-of-the-great-north-feast-in-the-park-2022-in-south-shields-bents-park-3823100">
       <img src="/images/logo-shields-gazette.png" alt="Shields Gazette article: 12 pictures from the final day of the Great North Feast in the Park 2022 in South Shields' Bents Park">
     </a>

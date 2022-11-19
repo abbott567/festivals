@@ -1,7 +1,4 @@
-@use '../layout/stack.scss' as *;
-
 .card {
-  @include stack;
   background-color: var(--page-colour);
   border-radius: 0.25rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .1), 0 0px 0 1px rgba(10, 10, 10, .2);
