@@ -1,4 +1,4 @@
-import forcehttps from './force-https'
+import forcehttps from './force.mjs'
 
 function useHttpsInProd (app) {
   if (process.env.NODE_ENV === 'production') {
