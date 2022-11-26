@@ -8,12 +8,14 @@ import sessions from 'express-session'
 import cookieParser from 'cookie-parser'
 import errorhandler from 'errorhandler'
 import dotenv from 'dotenv'
+import useHttpsInProd from './https/use-in-prod.mjs'
 
 // Use .env
 dotenv.config()
 
 // Create Express App
 const app = express()
+useHttpsInProd(app)
 
 // Express Middleware
 // -- Static routes
