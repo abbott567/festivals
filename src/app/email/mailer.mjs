@@ -17,9 +17,9 @@ function sendEmail (recipients, text, html) {
 
   // setup email data with unicode symbols
   const mailOptions = {
-    from: `"${process.env.FESTIVAL_NAME}" <${process.env.FESTIVAL_EMAIL}>`,
+    from: `"${process.env.EMAIL_FROM}" <${process.env.FESTIVAL_EMAIL}>`,
     to: recipients,
-    subject: 'New booking',
+    subject: `${process.env.EMAIL_SUBJECT}`,
     text,
     html
   }
