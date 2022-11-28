@@ -3,7 +3,7 @@
 </h1>
 
 <p>
-  Hello {{ data.owner.name -}},
+  Hello {{data.owner.name}},
 </p>
 <p>
   Thanks for registering your interest with our food and drink festivals. This is 
@@ -35,19 +35,19 @@
 </h2>
 <p>
   Name:<br>
-  {{- data.owner.name -}}
+  {{data.owner.name}}
 </p>
 <p>
   Phone:<br>
-  {{- data.owner.phone -}}
+  {{data.owner.phone}}
 </p>
 <p>
   Email:<br>
-  {{- data.owner.email -}}
+  {{data.owner.email}}
 </p>
 <p>
   Address:<br>
-  {{- data.owner.address -}}
+  {{data.owner.address}}
 </p>
  
 <hr>
@@ -57,21 +57,21 @@
 </h2>
 {%- for event in data.eventsAttending %}
 <h3>
-  Event {{- loop.index }}
+  Event {{loop.index}}
 </h3>
 <p>
   Event details:<br>
-  {{- event.name -}}<br>
-  {{- event.location }} {{ event.date -}}
+  {{event.name}}<br>
+  {{event.location}} {{event.date}}
 </p>
 <p>
   Requested items:<br>
   {%- for item in event.requestedItems -%}
-    £{{- item.cost }}{{ item.name -}}<br>
+    £{{item.cost}} {{item.name}}<br>
   {%- endfor -%}
 </p>
 <p>
   Estimated cost:<br>
-  £{{- event.estimatedCost }}
+  £{{event.estimatedCost}}
 </p>
 {%- endfor -%}
