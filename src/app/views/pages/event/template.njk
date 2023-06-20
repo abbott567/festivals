@@ -1,13 +1,13 @@
 
 {%- extends 'layouts/base.njk' -%}
-{%- set pageTitle = event.name + ' at ' + event.address.city + ' on ' + event.date -%}
+{%- set pageTitle = event.name + ' at ' + event.address.city + ' on ' + event.date.pretty -%}
 
 {%- block main -%}
   <div class="box">
     <h1 class="center">
       <span>{{event.name}}</span>
       <span class="visually-hidden"> - </span><br>
-      <span class="heading-s">{{event.address.city}} - {{event.date}}</span>
+      <span class="heading-s">{{event.address.city}} - {{event.date.pretty}}</span>
     </h1>
 
     <h2 class="margin-top-!-4">How to find us</h2>

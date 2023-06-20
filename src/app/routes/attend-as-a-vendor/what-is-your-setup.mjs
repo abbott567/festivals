@@ -17,7 +17,7 @@ function addToRoutes (router) {
       return res.redirect(start)
     }
     // If event ID does not exist in the data
-    const eventRef = events.find(x => x.id === id)
+    const eventRef = events.all.find(x => x.id === id)
     const event = eventsAttending.find(x => x.id === id)
     if (eventRef === undefined) {
       console.warn('the event id was not in the config data when requesting items')
@@ -45,7 +45,7 @@ function addToRoutes (router) {
     }
     // Loop through price list and append data to requested items
     items.forEach(i => {
-      const event = events.find(x => x.id === id)
+      const event = events.all.find(x => x.id === id)
       const items = event.prices.find(x => x.id === i)
       requestedItems.push(items)
     })

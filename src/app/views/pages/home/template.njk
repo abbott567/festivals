@@ -8,11 +8,11 @@
 </h1>
 
 <div class="center box">
-  <h2 class="heading-m">Our events</h2>
+  <h2 class="heading-m">Upcoming events</h2>
 </div>
 
 <div class="box grid padding-top:0">
-  {%- for event in events -%}
+  {%- for event in events.upcoming -%}
     <div class="card center">
       <div class="frame">
         <img src="{{- event.image.src -}}" alt="{{- event.image.alt -}}">
@@ -23,17 +23,17 @@
           {{- event.address.city -}}
         </h3>
 
-        <p id="date-{{event.id}}" class="date">{{- event.date -}}</p>
+        <p id="date-{{event.id}}" class="date">{{- event.date.pretty -}}</p>
         <p id="name-{{event.id}}">{{- event.name -}}</p>
 
         <p class="align-centre">
-          <a href="/events/{{- event.id -}}">More information <span class="visually-hidden">about {{event.name}} at {{event.address.city}} on {{event.date}}</span></a>
+          <a href="/events/{{- event.id -}}">More information <span class="visually-hidden">about {{event.name}} at {{event.address.city}} on {{event.date.pretty}}</span></a>
         </p>
       </div>
     </div>
   {%- endfor -%}
 </div>
-      
+
 <div class="center box padding-bottom:0">
   <h2>Featured in</h2>
 </div>

@@ -1,4 +1,6 @@
-const events = [
+import { isBefore, isAfter, parseISO } from 'date-fns'
+
+const all = [
   {
     id: '1',
     image: {
@@ -6,7 +8,11 @@ const events = [
       alt: ''
     },
     name: 'Great North Feast in the park',
-    date: '27 May to 29 May 2023',
+    date: {
+      pretty: '27 May to 29 May 2023',
+      start: '2023-05-27',
+      end: '2023-05-29'
+    },
     address: {
       line1: 'Bents Park',
       line2: 'Sea Rd',
@@ -62,7 +68,11 @@ const events = [
       alt: ''
     },
     name: 'Feast by the sea',
-    date: '17 June to 18 June 2023',
+    date: {
+      pretty: '17 June to 18 June 2023',
+      start: '2023-06-17',
+      end: '2023-06-18'
+    },
     address: {
       line1: 'Spanish City Plaza',
       line2: '',
@@ -106,7 +116,11 @@ const events = [
       alt: ''
     },
     name: 'Cramlington Feast',
-    date: '1 July to 2 July 2023',
+    date: {
+      pretty: '1 July to 2 July 2023',
+      start: '2023-07-01',
+      end: '2023-07-02'
+    },
     address: {
       line1: 'Seven Oaks Park',
       line2: 'Dudley Lane',
@@ -165,7 +179,11 @@ const events = [
       alt: ''
     },
     name: 'Feast by the sea',
-    date: '22 July to 23 July 2023',
+    date: {
+      pretty: '22 July to 23 July 2023',
+      start: '2023-07-22',
+      end: '2023-07-23'
+    },
     address: {
       line1: 'Spanish City Plaza',
       line2: '',
@@ -209,7 +227,11 @@ const events = [
       alt: ''
     },
     name: 'Feast by the sea',
-    date: '12 August to 13 August 2023',
+    date: {
+      pretty: '12 August to 13 August 2023',
+      start: '2023-08-12',
+      end: '2023-08-13'
+    },
     address: {
       line1: 'Spanish City Plaza',
       line2: '',
@@ -304,4 +326,16 @@ const events = [
   }
 ]
 
-export default events
+function getPreviousEvents (events) {
+  return events.filter(event => isBefore(parseISO(event.date.end), new Date()))
+}
+
+function getUpcomingEvents (events) {
+  return events.filter(event => isAfter(parseISO(event.date.start), new Date()))
+}
+
+export default {
+  all,
+  upcoming: getUpcomingEvents(all),
+  previous: getPreviousEvents(all)
+}

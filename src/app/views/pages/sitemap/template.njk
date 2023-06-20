@@ -23,10 +23,10 @@
     {%- if articles.length > 0 -%}
       <h2>Events</h2>
       <ul>
-        {%- for event in events -%}
+        {%- for event in events.all -%}
           <li>
             <a href="/events/{{event.id}}">
-              {{event.name}} at {{event.address.city}} on {{event.date}}
+              {{event.name}} at {{event.address.city}} on {{event.date.pretty}}
             </a>
           </li>
         {%- endfor -%}

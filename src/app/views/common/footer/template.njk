@@ -4,10 +4,10 @@
       <div class="box">
         <h2 class="margin-bottom-!-0">Events</h2>
         <ul class="stack margin-top-!-0">
-          {%- for event in events -%}
+          {%- for event in events.all -%}
             <li class="margin-block-start-!-0">
               <a href="/events/{{event.id}}">
-                {{event.name}}<br>{{event.address.city}}<br>{{event.date}}<span class="visually-hidden">at {{event.address.city}}</span>
+                {{event.name}}<br>{{event.address.city}}<br>{{event.date.pretty}}<span class="visually-hidden">at {{event.address.city}}</span>
               </a>
             </li>
           {%- endfor -%}

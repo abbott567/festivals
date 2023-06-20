@@ -21,7 +21,7 @@ router.get('/sitemap', (req, res) => {
 
 router.get('/events/:id', (req, res) => {
   const id = req.params.id
-  const event = events.find(x => x.id === id)
+  const event = events.all.find(x => x.id === id)
   const filteredArticles = articles.filter(x => event.articles.includes(x.id))
   res.render('pages/event/template.njk', { event, articles: filteredArticles })
 })

@@ -26,7 +26,7 @@ function addToRoutes (router) {
     const eventsAttending = []
     evs.forEach(e => {
       // Push each event into the session
-      const event = events.find(x => x.id === e)
+      const event = events.upcoming.find(x => x.id === e)
       eventsAttending.push(event)
     })
     req.session.data.eventsAttending = eventsAttending

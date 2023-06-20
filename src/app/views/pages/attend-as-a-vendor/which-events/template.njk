@@ -21,9 +21,9 @@
           </p>
         {%- endif -%}
 
-        {%- for event in events -%}
+        {%- for event in events.upcoming -%}
           {%- set hint -%}
-            {{- event.address.city -}},{{- ' ' -}}{{- event.date -}}.
+            {{- event.address.city -}},{{- ' ' -}}{{- event.date.pretty -}}.
           {%- endset -%}
 
           {{- checkbox({
