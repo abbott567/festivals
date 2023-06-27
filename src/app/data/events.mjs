@@ -275,7 +275,11 @@ const all = [
       alt: ''
     },
     name: 'Great North Feast in the park',
-    date: '26 to 28 August 2023',
+    date: {
+      pretty: '26 to 28 August 2023',
+      start: '2023-08-26',
+      end: '2023-08-28'
+    },
     address: {
       line1: 'Bents Park',
       line2: 'Sea Rd',
