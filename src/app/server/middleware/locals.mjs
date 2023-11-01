@@ -1,4 +1,4 @@
-import events from '../../data/events.mjs'
+import events from '../../data/2024-events.mjs'
 
 function set (req, res, next) {
   if (req.session.data === undefined) req.session.data = {}
