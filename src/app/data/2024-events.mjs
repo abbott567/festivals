@@ -99,13 +99,18 @@ const all = [
     prices: [
       {
         id: '1',
-        name: 'Street food',
-        cost: 350
+        name: 'Street food (limited to 10 vendors)',
+        cost: 400
       },
       {
         id: '2',
         name: 'Electricity (£40 per day)',
         cost: 80
+      },
+      {
+        id: '3',
+        name: 'Producer stall (space only)',
+        cost: 150
       }
     ]
   },
@@ -210,13 +215,18 @@ const all = [
     prices: [
       {
         id: '1',
-        name: 'Street food',
-        cost: 350
+        name: 'Street food (limited to 10 vendors)',
+        cost: 400
       },
       {
         id: '2',
         name: 'Electricity (£40 per day)',
         cost: 80
+      },
+      {
+        id: '3',
+        name: 'Producer stall (space only)',
+        cost: 150
       }
     ]
   },
@@ -258,13 +268,18 @@ const all = [
     prices: [
       {
         id: '1',
-        name: 'Street food',
-        cost: 350
+        name: 'Street food (limited to 10 vendors)',
+        cost: 400
       },
       {
         id: '2',
         name: 'Electricity (£40 per day)',
         cost: 80
+      },
+      {
+        id: '3',
+        name: 'Producer stall (space only)',
+        cost: 150
       }
     ]
   },
