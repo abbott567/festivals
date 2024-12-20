@@ -1,6 +1,6 @@
 'use-strict'
 
-import events from '../../data/2024-events.mjs'
+import events from '../../data/2025-events.mjs'
 
 function addToRoutes (router) {
   // Which events?

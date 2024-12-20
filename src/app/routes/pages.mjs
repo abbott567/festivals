@@ -1,6 +1,6 @@
 'use-strict'
 
-import events from '../data/2024-events.mjs'
+import events from '../data/2025-events.mjs'
 import articles from '../data/news-articles.mjs'
 import attendAsAVendor from './attend-as-a-vendor/_all.mjs'
 import express from 'express'
