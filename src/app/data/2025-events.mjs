@@ -122,9 +122,9 @@ const all = [
     },
     name: 'Feast by the sea',
     date: {
-      pretty: '30 June to 21 June 2025',
-      start: '2025-06-30',
-      end: '2025-06-31'
+      pretty: '26 July to 27 July 2025',
+      start: '2025-07-26',
+      end: '2025-07-27'
     },
     address: {
       line1: 'Spanish City Plaza',
@@ -224,6 +224,59 @@ const all = [
         id: '5',
         name: 'Electricity (£40 per day)',
         cost: 120
+      }
+    ]
+  },
+  {
+    id: '5',
+    image: {
+      src: '/images/event-whitley-bay-3.jpg',
+      alt: ''
+    },
+    name: 'Feast by the sea',
+    date: {
+      pretty: '30 August to 31 August 2025',
+      start: '2025-08-30',
+      end: '2025-08-31'
+    },
+    address: {
+      line1: 'Spanish City Plaza',
+      line2: '',
+      city: 'Whitley Bay',
+      postcode: 'NE26 1BG'
+    },
+    fbgroup: 'https://fb.me/e/3aGRG24Gm',
+    details: `
+      <p>
+        Spanish City is a recently developed sea-front event space on the old 
+        amusement park. It is recognisable by the gleaming Spanish City dome home 
+        to cafes and shops.
+      </p>
+      <p>
+        We have been running events here for more than 10 years and are attended 
+        by thousands of visitors.
+      </p>
+      <p>
+        The sea-front and Park View shopping areas are also a must when visiting.
+      </p>
+    `,
+    articles: ['3'],
+    map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d571.4375095274908!2d-1.4486599034089518!3d55.04759554081662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e6c2f6840d237%3A0xea596f7d81c24698!2sSpanish%20City!5e0!3m2!1sen!2suk!4v1667738077197!5m2!1sen!2suk',
+    prices: [
+      {
+        id: '1',
+        name: 'Street food (limited to 10 vendors)',
+        cost: 400
+      },
+      {
+        id: '2',
+        name: 'Electricity (£40 per day)',
+        cost: 80
+      },
+      {
+        id: '3',
+        name: 'Producer stall (space only)',
+        cost: 150
       }
     ]
   }
