@@ -37,33 +37,33 @@ const all = [
     prices: [
       {
         id: '1',
-        type: 'stall',
-        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
-        cost: 180
-      },
-      {
-        id: '2',
-        type: 'stall',
-        name: 'Stall - Makers market',
-        cost: 180
-      },
-      {
-        id: '3',
-        type: 'stall',
-        name: 'Makers market - Space only',
-        cost: 100
-      },
-      {
-        id: '4',
         type: 'vendor',
         name: 'Street food - Space only',
         cost: 400
       },
       {
-        id: '5',
+        id: '2',
         type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 120
+      },
+      {
+        id: '3',
+        type: 'stall',
+        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
+        cost: 180
+      },
+      {
+        id: '4',
+        type: 'stall',
+        name: 'Stall - Makers market',
+        cost: 180
+      },
+      {
+        id: '5',
+        type: 'stall',
+        name: 'Makers market - Space only',
+        cost: 100
       }
     ]
   },
@@ -217,33 +217,33 @@ const all = [
     prices: [
       {
         id: '1',
-        type: 'stall',
-        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
-        cost: 180
-      },
-      {
-        id: '2',
-        type: 'stall',
-        name: 'Stall - Makers market',
-        cost: 180
-      },
-      {
-        id: '3',
-        type: 'stall',
-        name: 'Makers market - Space only',
-        cost: 100
-      },
-      {
-        id: '4',
         type: 'vendor',
         name: 'Street food - Space only',
         cost: 400
       },
       {
-        id: '5',
+        id: '2',
         type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 120
+      },
+      {
+        id: '3',
+        type: 'stall',
+        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
+        cost: 180
+      },
+      {
+        id: '4',
+        type: 'stall',
+        name: 'Stall - Makers market',
+        cost: 180
+      },
+      {
+        id: '5',
+        type: 'stall',
+        name: 'Makers market - Space only',
+        cost: 100
       }
     ]
   },

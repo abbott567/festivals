@@ -66,12 +66,11 @@ async function addNewRow (sheet, req) {
     'CONTACT DETAILS:\nTimestamp': timestamp,
     'ESTIMATED COST:\nTotal': estimatedCost,
     'DEPOSIT:\nAmount': depositAmount,
-    'OUTSTANDING BALANCE:\nAmount': outstandingAmount,
-    [breakdowns.event1.heading]: breakdowns.event1.data,
-    [breakdowns.event2.heading]: breakdowns.event2.data,
-    [breakdowns.event3.heading]: breakdowns.event3.data,
-    [breakdowns.event4.heading]: breakdowns.event4.data,
-    [breakdowns.event5.heading]: breakdowns.event5.data
+    'OUTSTANDING BALANCE:\nAmount': outstandingAmount
+  }
+
+  for (const [key, entry] of Object.entries(breakdowns)) {
+    newRow[entry.heading] = entry.data
   }
   await sheet.vendors.addRow(newRow)
   return true
