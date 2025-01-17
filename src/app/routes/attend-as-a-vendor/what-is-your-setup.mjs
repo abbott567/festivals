@@ -7,6 +7,7 @@ function addToRoutes (router) {
   router.get('/attend-as-a-vendor/events/:id', (req, res, next) => {
     const id = req.params.id
     const eventsAttending = req.session.data.eventsAttending
+  
     const start = '/attend-as-a-vendor/about-your-business'
     // If business or events pages have not been completed
     if (req.session.data.business === undefined) {
@@ -24,7 +25,7 @@ function addToRoutes (router) {
       return res.redirect(start)
     } else {
       // If everything else is ok, render the page
-      return res.render('pages/attend-as-a-vendor/what-is-your-setup/template.njk', { event })
+      return res.render('pages/attend-as-a-vendor/what-is-your-setup/template.njk', { event, id })
     }
   })
 
@@ -41,7 +42,7 @@ function addToRoutes (router) {
       const eventsAttending = req.session.data.eventsAttending
       const event = eventsAttending.find(x => x.id === id)
       // Re-render the page with errors
-      return res.render('pages/attend-as-a-vendor/what-is-your-setup/template.njk', { event, errors })
+      return res.render('pages/attend-as-a-vendor/what-is-your-setup/template.njk', { event, id, errors })
     }
     // Loop through price list and append data to requested items
     items.forEach(i => {
