@@ -24,17 +24,18 @@ Address:
 
 Events you're attending:
 {% for event in data.eventsAttending %}
-Event {{loop.index}}
+  Event {{loop.index}}
 
-Event details:
-{{event.name}}
-{{event.location}} {{event.date.pretty}}
+  Event details:
+  {{event.name}}
+  {{event.address}}
+  {{event.date.pretty}}
 
-Requested items:
-{% for item in event.requestedItems -%}
-  £{{item.cost}} {{item.name}}<br>
-{%- endfor -%}
+  Requested items:
+  {% for item in event.requestedItems -%}
+    £{{item.cost}} {{item.name}}<br>
+  {%- endfor -%}
 
-Estimated cost:
-£{{event.estimatedCost}}
+  Estimated cost:
+  £{{event.estimatedCost}}
 {%- endfor %}

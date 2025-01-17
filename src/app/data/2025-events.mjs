@@ -10,6 +10,7 @@ const all = [
     name: 'Great North Feast in the park',
     date: {
       pretty: '24 May to 26 May 2025',
+      prettyShort: '24 - 26 May',
       start: '2025-05-24',
       end: '2025-05-26'
     },
@@ -36,26 +37,31 @@ const all = [
     prices: [
       {
         id: '1',
+        type: 'stall',
         name: 'Indoor Marquee Stall - Food, not for immediate consumption',
         cost: 180
       },
       {
         id: '2',
+        type: 'stall',
         name: 'Stall - Makers market',
         cost: 180
       },
       {
         id: '3',
+        type: 'stall',
         name: 'Makers market - Space only',
         cost: 100
       },
       {
         id: '4',
+        type: 'vendor',
         name: 'Street food - Space only',
         cost: 400
       },
       {
         id: '5',
+        type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 120
       }
@@ -70,6 +76,7 @@ const all = [
     name: 'Feast by the sea',
     date: {
       pretty: '21 June to 22 June 2025',
+      prettyShort: '21 - 22 June',
       start: '2025-06-21',
       end: '2025-06-22'
     },
@@ -99,16 +106,19 @@ const all = [
     prices: [
       {
         id: '1',
+        type: 'vendor',
         name: 'Street food (limited to 10 vendors)',
         cost: 400
       },
       {
         id: '2',
+        type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 80
       },
       {
         id: '3',
+        type: 'stall',
         name: 'Producer stall (space only)',
         cost: 150
       }
@@ -123,6 +133,7 @@ const all = [
     name: 'Feast by the sea',
     date: {
       pretty: '26 July to 27 July 2025',
+      prettyShort: '26 - 27 July',
       start: '2025-07-26',
       end: '2025-07-27'
     },
@@ -152,16 +163,19 @@ const all = [
     prices: [
       {
         id: '1',
+        type: 'vendor',
         name: 'Street food (limited to 10 vendors)',
         cost: 400
       },
       {
         id: '2',
+        type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 80
       },
       {
         id: '3',
+        type: 'stall',
         name: 'Producer stall (space only)',
         cost: 150
       }
@@ -176,6 +190,7 @@ const all = [
     name: 'Great North Feast in the park',
     date: {
       pretty: '23 to 25 August 2025',
+      prettyShort: '23 - 25 August',
       start: '2025-08-23',
       end: '2025-08-25'
     },
@@ -202,26 +217,31 @@ const all = [
     prices: [
       {
         id: '1',
-        name: 'Stall - Food, not for immediate consumption',
+        type: 'stall',
+        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
         cost: 180
       },
       {
         id: '2',
+        type: 'stall',
         name: 'Stall - Makers market',
         cost: 180
       },
       {
         id: '3',
+        type: 'stall',
         name: 'Makers market - Space only',
         cost: 100
       },
       {
         id: '4',
-        name: 'Hot food - Space only',
+        type: 'vendor',
+        name: 'Street food - Space only',
         cost: 400
       },
       {
         id: '5',
+        type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 120
       }
@@ -236,6 +256,7 @@ const all = [
     name: 'Feast by the sea',
     date: {
       pretty: '30 August to 31 August 2025',
+      prettyShort: '30 - 31 August',
       start: '2025-08-30',
       end: '2025-08-31'
     },
@@ -265,16 +286,19 @@ const all = [
     prices: [
       {
         id: '1',
+        type: 'vendor',
         name: 'Street food (limited to 10 vendors)',
         cost: 400
       },
       {
         id: '2',
+        type: 'other',
         name: 'Electricity (£40 per day)',
         cost: 80
       },
       {
         id: '3',
+        type: 'stall',
         name: 'Producer stall (space only)',
         cost: 150
       }
