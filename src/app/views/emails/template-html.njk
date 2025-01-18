@@ -62,8 +62,13 @@
 <p>
   Event details:<br>
   {{event.name}}<br>
-  {{event.address}}<br>
-  {{event.date.pretty}}
+  {{event.date.pretty}}<br>
+  {{event.address.line1}}<br>
+  {%- if event.address.line2 -%}
+    {{event.address.line2}}<br>
+  {%- endif -%}
+  {{event.address.city}}<br>
+  {{event.address.postcode}}
 </p>
 <p>
   Requested items:<br>

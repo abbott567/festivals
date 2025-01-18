@@ -1,6 +1,6 @@
 'use-strict'
 
-// import sendEmail from '../../email/mailer.mjs'
+import sendEmail from '../../email/mailer.mjs'
 import updateSheet from '../../sheet/load.mjs'
 
 function addToRoutes (router) {
@@ -30,10 +30,10 @@ function addToRoutes (router) {
     if (sheetResult !== 'success') {
       return res.render('pages/attend-as-a-vendor/check-your-answers/template.njk', { errors: sheetResult })
     }
-    // const emailResult = await sendEmail(req)
-    // if (emailResult !== 'success') {
-    //   return res.render('pages/attend-as-a-vendor/check-your-answers/template.njk', { errors: emailResult })
-    // }
+    const emailResult = await sendEmail(req)
+    if (emailResult !== 'success') {
+      return res.render('pages/attend-as-a-vendor/check-your-answers/template.njk', { errors: emailResult })
+    }
     res.redirect('/attend-as-a-vendor/success')
   })
 }

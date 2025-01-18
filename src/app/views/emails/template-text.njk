@@ -28,8 +28,13 @@ Events you're attending:
 
   Event details:
   {{event.name}}
-  {{event.address}}
   {{event.date.pretty}}
+  {{event.address.line1}}
+  {%- if event.address.line2 -%}
+    {{event.address.line2}}
+  {%- endif -%}
+  {{event.address.city}}
+  {{event.address.postcode}}
 
   Requested items:
   {% for item in event.requestedItems -%}

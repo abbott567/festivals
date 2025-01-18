@@ -26,6 +26,8 @@ async function addNewRow (sheet, req) {
   const data = req.session.data
   const now = new Date()
   const timestamp = format(now, 'yyyy-MM-dd@HH:mm')
+  let isVendor = false
+  let isStall = false
 
   const breakdowns = {}
   for (const entry of events.all) {
@@ -44,8 +46,6 @@ async function addNewRow (sheet, req) {
     breakdowns[eventKey].data = ''
     estimatedCost += event.estimatedCost
     // Loop requested items
-    let isVendor = false
-    let isStall = false
     for (const item of event.requestedItems) {
       if (item.type === 'vendor') isVendor = true
       if (item.type === 'stall') isStall = true
@@ -72,7 +72,8 @@ async function addNewRow (sheet, req) {
   for (const [key, entry] of Object.entries(breakdowns)) {
     newRow[entry.heading] = entry.data
   }
-  await sheet.vendors.addRow(newRow)
+  if (isVendor) await sheet.vendors.addRow(newRow)
+  else await sheet.stalls.addRow(newRow)
   return true
 }
 
