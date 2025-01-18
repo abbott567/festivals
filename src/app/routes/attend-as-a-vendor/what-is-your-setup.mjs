@@ -7,7 +7,7 @@ function addToRoutes (router) {
   router.get('/attend-as-a-vendor/events/:id', (req, res, next) => {
     const id = req.params.id
     const eventsAttending = req.session.data.eventsAttending
-  
+
     const start = '/attend-as-a-vendor/about-your-business'
     // If business or events pages have not been completed
     if (req.session.data.business === undefined) {

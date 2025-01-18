@@ -69,7 +69,7 @@ async function addNewRow (sheet, req) {
     'OUTSTANDING BALANCE:\nAmount': outstandingAmount
   }
 
-  for (const [key, entry] of Object.entries(breakdowns)) {
+  for (const entry of Object.values(breakdowns)) {
     newRow[entry.heading] = entry.data
   }
   if (isVendor) await sheet.vendors.addRow(newRow)
