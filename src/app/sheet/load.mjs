@@ -38,8 +38,6 @@ async function addNewRow (sheet, req) {
   }
 
   let estimatedCost = 0
-  let depositAmount = 0
-
   for (const event of data.eventsAttending) {
     // Dynamically link
     const eventKey = `event${event.id}`
@@ -51,10 +49,7 @@ async function addNewRow (sheet, req) {
       if (item.type === 'stall') isStall = true
       breakdowns[eventKey].data += `${item.name} = £${item.cost}\n`
     }
-    if (isVendor) depositAmount += 100
-    if (isStall) depositAmount += 50
   }
-  const outstandingAmount = estimatedCost - depositAmount
 
   const newRow = {
     'CUSTOMER DETAILS:\nExhibitor name': data.business['exhibitor-name'],
@@ -64,16 +59,27 @@ async function addNewRow (sheet, req) {
     'CONTACT DETAILS:\nEmail': data.owner.email,
     'CONTACT DETAILS:\nAddress': data.owner.address,
     'CONTACT DETAILS:\nTimestamp': timestamp,
-    'ESTIMATED COST:\nTotal': estimatedCost,
-    'DEPOSIT:\nAmount': depositAmount,
-    'OUTSTANDING BALANCE:\nAmount': outstandingAmount
+    'ESTIMATED COST:\nTotal': estimatedCost
   }
-
   for (const entry of Object.values(breakdowns)) {
     newRow[entry.heading] = entry.data
   }
-  if (isVendor) await sheet.vendors.addRow(newRow)
-  else await sheet.stalls.addRow(newRow)
+
+  // Insert row and get rowIndex
+  let addedRow
+  if (isVendor) addedRow = await sheet.vendors.addRow(newRow)
+  else addedRow = await sheet.stalls.addRow(newRow)
+
+  const rows = await (isVendor ? sheet.vendors.getRows() : sheet.stalls.getRows())
+  const rowIndex = rows.length + 1
+  addedRow.set('OUTSTANDING BALANCE:\nAmount', `=I${rowIndex}-J${rowIndex}`)
+
+  let depositFormula = ''
+  if (isVendor) depositFormula += `=IF(P${rowIndex}<>"not attending", 100, 0) + IF(Q${rowIndex}<>"not attending", 100, 0) + IF(R${rowIndex}<>"not attending", 100, 0) + IF(S${rowIndex}<>"not attending", 100, 0) + IF(T${rowIndex}<>"not attending", 100, 0)`
+  if (isStall) depositFormula += `+IF(P${rowIndex}<>"not attending", 50, 0) + IF(Q${rowIndex}<>"not attending", 50, 0) + IF(R${rowIndex}<>"not attending", 50, 0) + IF(S${rowIndex}<>"not attending", 50, 0) + IF(T${rowIndex}<>"not attending", 50, 0)`
+  addedRow.set('DEPOSIT:\nAmount', depositFormula)
+
+  await addedRow.save()
   return true
 }
 
