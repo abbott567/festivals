@@ -72,6 +72,9 @@ async function addNewRow (sheet, req) {
 
   const rows = await (isVendor ? sheet.vendors.getRows() : sheet.stalls.getRows())
   const rowIndex = rows.length + 1
+
+  // Force the estimated cost to be a number again after row insertion
+  addedRow.set('ESTIMATED COST:\nTotal', estimatedCost)
   addedRow.set('OUTSTANDING BALANCE:\nAmount', `=I${rowIndex}-J${rowIndex}`)
 
   let depositFormula = ''
