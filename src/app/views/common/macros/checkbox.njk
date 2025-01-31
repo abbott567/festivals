@@ -15,12 +15,19 @@
       {%- endfor -%}
     >
     <label for="{{- params.id -}}-input" class="checkbox__label">
-      <span class="checkbox__text">{{- params.label -}}</span>
-    {%- if params.hint -%}
-      <span id="{{- params.id -}}-hint" class="checkbox__hint">
-        {{- params.hint -}}
+      <span class="checkbox__text">
+      {{- params.label -}}
       </span>
-    {%- endif -%}
+      {%- if params.description -%}
+        <span id="{{- params.id -}}-description" class="checkbox__hint">
+          {{- params.description -}}
+        </span>
+      {%- endif -%}
+      {%- if params.cost -%}
+        <span id="{{- params.id -}}-cost" class="checkbox__hint">
+          {{- params.cost -}}
+        </span>
+      {%- endif -%}
     </label>
   </div>
 </div>

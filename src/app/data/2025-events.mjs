@@ -38,32 +38,23 @@ const all = [
       {
         id: '1',
         type: 'vendor',
-        name: 'Street food - Space only',
+        name: 'Street food (Space only)',
+        description: 'Electricity NOT included',
         cost: 400
       },
       {
         id: '2',
-        type: 'other',
-        name: 'Electricity (£40 per day)',
-        cost: 120
+        type: 'vendor',
+        name: 'Street food + Electricity',
+        description: 'Charged at £40 per day',
+        cost: 520
       },
       {
         id: '3',
         type: 'stall',
-        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
+        name: 'Stall',
+        description: 'Indoor Marquee',
         cost: 180
-      },
-      {
-        id: '4',
-        type: 'stall',
-        name: 'Stall - Makers market',
-        cost: 180
-      },
-      {
-        id: '5',
-        type: 'stall',
-        name: 'Makers market - Space only',
-        cost: 100
       }
     ]
   },
@@ -107,19 +98,22 @@ const all = [
       {
         id: '1',
         type: 'vendor',
-        name: 'Street food (limited to 10 vendors)',
+        name: 'Street food (Space only)',
+        description: 'Electricity NOT included',
         cost: 400
       },
       {
         id: '2',
-        type: 'other',
-        name: 'Electricity (£40 per day)',
-        cost: 80
+        type: 'vendor',
+        name: 'Street food + Electricity',
+        description: 'Charged at £40 per day',
+        cost: 480
       },
       {
         id: '3',
         type: 'stall',
-        name: 'Producer stall (space only)',
+        name: 'Stall',
+        description: 'Space only',
         cost: 150
       }
     ]
@@ -164,19 +158,22 @@ const all = [
       {
         id: '1',
         type: 'vendor',
-        name: 'Street food (limited to 10 vendors)',
+        name: 'Street food (Space only)',
+        description: 'Electricity NOT included',
         cost: 400
       },
       {
         id: '2',
-        type: 'other',
-        name: 'Electricity (£40 per day)',
-        cost: 80
+        type: 'vendor',
+        name: 'Street food + Electricity',
+        description: 'Charged at £40 per day',
+        cost: 480
       },
       {
         id: '3',
         type: 'stall',
-        name: 'Producer stall (space only)',
+        name: 'Stall',
+        description: 'Space only',
         cost: 150
       }
     ]
@@ -218,32 +215,23 @@ const all = [
       {
         id: '1',
         type: 'vendor',
-        name: 'Street food - Space only',
+        name: 'Street food (Space only)',
+        description: 'Electricity NOT included',
         cost: 400
       },
       {
         id: '2',
-        type: 'other',
-        name: 'Electricity (£40 per day)',
-        cost: 120
+        type: 'vendor',
+        name: 'Street food + Electricity',
+        description: 'Charged at £40 per day',
+        cost: 520
       },
       {
         id: '3',
         type: 'stall',
-        name: 'Indoor Marquee Stall - Food, not for immediate consumption',
+        name: 'Stall',
+        description: 'Indoor Marquee',
         cost: 180
-      },
-      {
-        id: '4',
-        type: 'stall',
-        name: 'Stall - Makers market',
-        cost: 180
-      },
-      {
-        id: '5',
-        type: 'stall',
-        name: 'Makers market - Space only',
-        cost: 100
       }
     ]
   },
@@ -287,19 +275,22 @@ const all = [
       {
         id: '1',
         type: 'vendor',
-        name: 'Street food (limited to 10 vendors)',
+        name: 'Street food (Space only)',
+        description: 'Electricity NOT included',
         cost: 400
       },
       {
         id: '2',
-        type: 'other',
-        name: 'Electricity (£40 per day)',
-        cost: 80
+        type: 'vendor',
+        name: 'Street food + Electricity',
+        description: 'Charged at £40 per day',
+        cost: 480
       },
       {
         id: '3',
         type: 'stall',
-        name: 'Producer stall (space only)',
+        name: 'Stall',
+        description: 'Space only',
         cost: 150
       }
     ]

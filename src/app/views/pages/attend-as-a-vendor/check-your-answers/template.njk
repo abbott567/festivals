@@ -3,7 +3,6 @@
 {%- set pageTitle = 'Check your answers before sending' -%}
 
 {%- block main -%}
-  
   {{- errorSummary(errors) -}}
   <div class="box">
     <h1>
@@ -27,7 +26,7 @@
         {{ data.business['type-of-products'] }}
       </dd>
     </dl>
-
+    <hr role="presentation">
     <h2>
       Your contact details
     </h2>
@@ -57,7 +56,7 @@
         {{- data.owner.address -}}
       </dd>
     </dl>
-
+    <hr role="presentation">
     <h2 style="margin-bottom: 0;">
       Events you're attending
     </h2>
@@ -88,10 +87,8 @@
             £{{- event.estimatedCost -}}
         </dd>
       </dl>
+      <hr role="presentation">
     {%- endfor -%}
-
-    <hr role="presentation">
-
     <div class="box">
       <p>
         Check all the information is correct before sending.

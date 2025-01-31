@@ -22,7 +22,7 @@
         {%- endif -%}
 
         {%- for event in events.upcoming -%}
-          {%- set hint -%}
+          {%- set description -%}
             {{- event.address.city -}},{{- ' ' -}}{{- event.date.pretty -}}.
           {%- endset -%}
 
@@ -30,7 +30,7 @@
             id: event.id,
             name: 'events-attending[]',
             label: event.name,
-            hint: hint,
+            description: description,
             errors: errors,
             session: data.eventsAttending
           }) -}}

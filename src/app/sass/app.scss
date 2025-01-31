@@ -6,27 +6,30 @@
 @use 'layout/switcher' as *;
 @use 'layout/cluster' as *;
 @use 'layout/stack' as *;
-@use 'layout/frame';
-@use 'layout/centre';
-@use 'layout/theming';
+@use 'layout/frame' as *;
+@use 'layout/centre' as *;
+@use 'layout/theming' as *;
 
 // Components / Elements
-@use 'elements';
-@use './components/header';
-@use './components/footer';
-@use './components/errors';
-@use './components/panel';
-@use './components/card';
-@use './components/forms';
-@use './components/skip-link';
+@use 'elements' as *;
+@use './components/header' as *;
+@use './components/footer' as *;
+@use './components/errors' as *;
+@use './components/panel' as *;
+@use './components/card' as *;
+@use './components/forms' as *;
+@use './components/skip-link' as *;
 
 // Utilities
-@use 'utilities';
+@use 'utilities' as *;
 
 // Fonts
-@use './fontawesome/fontawesome.scss';
-@use './fontawesome/brands.scss';
-@use './fontawesome/solid.scss';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome' with (
+  $fa-font-path: "/node_modules/@fortawesome/fontawesome-free/webfonts"
+);
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap');
 
 html {

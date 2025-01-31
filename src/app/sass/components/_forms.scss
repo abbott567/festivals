@@ -113,13 +113,13 @@ label > .label-body {
 
 .checkbox {
   position: relative;
-
+  margin-bottom: var(--s0);
   &__label:before {
     background: white;
     content: "";
     position: absolute;
     display: inline-block;
-    top: var(--s-2);
+    top: var(--s-4);
     left: 0;
     width: var(--s2);
     height: var(--s2);
@@ -151,6 +151,7 @@ label > .label-body {
   &__text {
     display: block;
     margin-left: var(--s3);
+    // margin-top: var(--s-3);
   }
   &__hint {
     display: block;
